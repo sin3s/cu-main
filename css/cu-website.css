@@ -1368,6 +1368,7 @@ text-transform: uppercase;
 
 /* Casey */
 .cu-work-card {
+  box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2);
   transform-origin: center;
   background-color: white;
   border-radius: 10px;
@@ -1378,8 +1379,6 @@ text-transform: uppercase;
   box-sizing: border-box; 
   transition: transform 0.6s, width 0.8s ease-in-out;
   z-index: 1;
-  position: -webkit-sticky;
-  position: sticky;
   top: 150px;
   width: 60%;
   opacity: 0.8;
@@ -1394,10 +1393,6 @@ text-transform: uppercase;
   margin-right: 5%;
 }
 
-#cu-work-card-1 {
-  box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2);
-}
-
 .cu-work-row-mobile-hide {
   display: flex;
   justify-content: space-between;
@@ -1410,6 +1405,7 @@ text-transform: uppercase;
 }
 
 .cu-work-col {
+  width: 100%;
   justify-content: center;
   flex: 1;
 }
