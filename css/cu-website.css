@@ -1207,7 +1207,6 @@ text-transform: uppercase;
   text-align: center;
   color: #000;
   margin-top: 0px;
-  padding-bottom: 18px;
 }
 
 .cu-h4-work {
@@ -1644,7 +1643,7 @@ text-transform: uppercase;
 
 .cu-sec-work {
   justify-content: space-between;
-  padding: 10% 10%;
+  padding: 5% 10%;
   background-color: #F3F3F3;
 }
 
