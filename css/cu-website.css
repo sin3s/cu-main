@@ -1367,7 +1367,6 @@ text-transform: uppercase;
 /* Casey */
 .cu-card-details {
   position : relative;
-  display: none;
   opacity : 1;
 }
 
@@ -1446,12 +1445,10 @@ text-transform: uppercase;
 
 .cu-card-arrow-img {
   opacity: 1;
-  margin-top: -10%;
 }
 
 .cu-work-card:hover .cu-card-arrow-img {
   animation: cu-work-arrow-animate 1s infinite;
-  margin-top: 0;
 }
 
 @keyframes cu-work-arrow-animate {
