@@ -14,4 +14,17 @@ window.addEventListener('scroll', function() {
   }
 });
   
+$(document).ready(function() {
+    $('.cu-work-card').hover(
+      function() { // mouseenter
+        $(this).find('.cu-card-details').stop(true, true).fadeIn(1200);
+        $(this).animate({'max-height': '1000px'}, 1000); // Set a large max-height
+      },
+      function() { // mouseleave
+        $(this).find('.cu-card-details').stop(true, true).fadeOut();
+        $(this).animate({'max-height': '800px'}, 1000); // Remove the max-height
+      }
+    );
+});
 
+  
