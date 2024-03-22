@@ -14,40 +14,43 @@ window.addEventListener('scroll', function() {
   }
 });
 
-// Calculate total resources
-var totalResources = document.images.length + document.scripts.length;
+document.addEventListener("DOMContentLoaded", function() {
+  // Calculate total resources
+  var totalResources = document.images.length + document.scripts.length;
 
-// Keep track of resources loaded
-var resourcesLoaded = 0;
+  // Keep track of resources loaded
+  var resourcesLoaded = 0;
 
-// Update the loader bar
-function updateLoaderBar() {
-  resourcesLoaded++;
-  var percentageLoaded = (resourcesLoaded / totalResources) * 100;
-  $('.loader .loader_bar:before').css('width', percentageLoaded + '%');
-}
+  // Update the loader bar
+  function updateLoaderBar() {
+    resourcesLoaded++;
+    var percentageLoaded = (resourcesLoaded / totalResources) * 100;
+    $('.loader .loader_bar').css('width', percentageLoaded + '%');
+  }
 
-// Attach onload event to images and scripts
-for (var i = 0; i < document.images.length; i++) {
-  document.images[i].onload = updateLoaderBar;
-}
+  // Attach onload event to images and scripts
+  for (var i = 0; i < document.images.length; i++) {
+    document.images[i].onload = updateLoaderBar;
+  }
 
-for (var i = 0; i < document.scripts.length; i++) {
-  document.scripts[i].onload = updateLoaderBar;
-}
+  for (var i = 0; i < document.scripts.length; i++) {
+    document.scripts[i].onload = updateLoaderBar;
+  }
 
-// Hide preloader when everything is loaded
-window.onload = function() {
-  $('#preloader').css({
-    "transform": "translateY(-100%)",
-    "transition-delay": "0.6s"
-  });
-  $('.loader').css({
-    "opacity": "0",
-    "transform": "translate(-50%,-100%)",
-    "transition-delay": "0.3s"
-  });
-};
+  // Hide preloader when everything is loaded
+  window.onload = function() {
+    $('#preloader').css({
+      "transform": "translateY(-100%)",
+      "transition-delay": "0.6s"
+    });
+    $('.loader').css({
+      "opacity": "0",
+      "transform": "translate(-50%,-100%)",
+      "transition-delay": "0.3s"
+    });
+  };
+});
+
 
   
 
