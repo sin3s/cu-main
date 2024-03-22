@@ -14,31 +14,18 @@ window.addEventListener('scroll', function() {
   }
 });
 
-document.addEventListener("DOMContentLoaded", function() {
-  // Calculate total resources
-  var totalResources = document.images.length + document.scripts.length;
-
-  // Keep track of resources loaded
-  var resourcesLoaded = 0;
-
-  // Update the loader bar
-  function updateLoaderBar() {
-    resourcesLoaded++;
-    var percentageLoaded = (resourcesLoaded / totalResources) * 100;
-    $('.loader .loader_bar').css('width', percentageLoaded + '%');
+var checkPageLoad = setInterval(function() {
+  if (document.readyState === 'complete') {
+    clearInterval(checkPageLoad);
+  } else {
+    var loaderBar = document.querySelector('.loader .loader_bar:before');
+    var currentDuration = parseFloat(window.getComputedStyle(loaderBar)['animation-duration']);
+    loaderBar.style.animationDuration = (currentDuration + 1) + 's';
   }
+}, 1000);
 
-  // Attach onload event to images and scripts
-  for (var i = 0; i < document.images.length; i++) {
-    document.images[i].onload = updateLoaderBar;
-  }
 
-  for (var i = 0; i < document.scripts.length; i++) {
-    document.scripts[i].onload = updateLoaderBar;
-  }
-
-  // Hide preloader when everything is loaded
-  window.onload = function() {
+$(window).on('load', function() {
     $('#preloader').css({
       "transform": "translateY(-100%)",
       "transition-delay": "0.6s"
@@ -46,11 +33,9 @@ document.addEventListener("DOMContentLoaded", function() {
     $('.loader').css({
       "opacity": "0",
       "transform": "translate(-50%,-100%)",
-      "transition-delay": "0.3s"
-    });
-  };
-});
-
+      "transition-delay": "0.3s"
+    });
+  });
 
   
 
