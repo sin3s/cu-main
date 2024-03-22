@@ -15,6 +15,10 @@ window.addEventListener('scroll', function() {
 });
 
 $(window).on('load', function() {
+  $('.loader .loader_bar:before').css({
+    "width": "100%",
+    "transition-delay": "0.3s"
+  });
   $('#preloader').css({
     "transform": "translateY(-100%)",
     "transition-delay": "0.6s"
@@ -22,9 +26,10 @@ $(window).on('load', function() {
   $('.loader').css({
     "opacity": "0",
     "transform": "translate(-50%,-100%)",
-    "transition-delay": "0.3s"
+    "transition-delay": "0.9s"
   });
 });
+
 
 
 
