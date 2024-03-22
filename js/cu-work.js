@@ -14,28 +14,28 @@ window.addEventListener('scroll', function() {
   }
 });
 
-var checkPageLoad = setInterval(function() {
-  if (document.readyState === 'complete') {
-    clearInterval(checkPageLoad);
-  } else {
-    var loaderBar = document.querySelector('.loader .loader_bar:before');
-    var currentDuration = parseFloat(window.getComputedStyle(loaderBar)['animation-duration']);
-    loaderBar.style.animationDuration = (currentDuration + 1) + 's';
-  }
-}, 1000);
-
+$(window).on('load', function() {
+  $('#preloader').css({
+    "transform": "translateY(-100%)",
+    "transition-delay": "0.6s"
+  });
+  $('.loader').css({
+    "opacity": "0",
+    "transform": "translate(-50%,-100%)",
+    "transition-delay": "0.3s"
+  });
+});
 
 $(window).on('load', function() {
-    $('#preloader').css({
-      "transform": "translateY(-100%)",
-      "transition-delay": "0.6s"
-    });
-    $('.loader').css({
-      "opacity": "0",
-      "transform": "translate(-50%,-100%)",
-      "transition-delay": "0.3s"
-    });
-  });
+  var checkPageLoad = setInterval(function() {
+    if (document.readyState === 'complete') {
+      $('.loader .loader_bar').css('animation', 'none');
+      clearInterval(checkPageLoad);
+    }
+  }, 10);
+});
+
+
 
   
 
