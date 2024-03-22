@@ -1405,7 +1405,7 @@ text-transform: uppercase;
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 87%;
   height: 100%;
   background: #00ade5;
   border-radius: 50px;
@@ -1423,7 +1423,7 @@ text-transform: uppercase;
   70% { width: 57% }
   80% { width: 60% }
   90% { width: 73% }
-  100% { width: 80% }
+  100% { width: 87% }
 }
 
 
