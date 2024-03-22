@@ -535,6 +535,10 @@ text-transform: uppercase;
   display: none;
 }
 
+.cu-h-black {
+  display: none;
+}
+
 .cu-services-list {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1196,18 +1200,11 @@ text-transform: uppercase;
   margin-top: auto;
   margin-bottom: auto;
   padding-bottom: 32px;
+  text-align: center;
   font-family: Montserrat, sans-serif;
-  color: #ffffff;
+  color: #000000;
   font-size: 36px;
   line-height: 42px;
-}
-
-.cu-h3-work {
-  top: 80px;
-  text-align: center;
-  color: #000;
-  margin-top: 10px;
-  margin-bottom: 20px;
 }
 
 .cu-h4-work {
@@ -1364,6 +1361,62 @@ text-transform: uppercase;
 }
 
 /* Casey */
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: #F6F6F6;
+  z-index: 9999;
+  transition: all 0.4s ease;
+}
+
+.loader {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  transition: 0.4s;
+}
+
+
+#loader_logo {
+  display: block;
+  width: 100px;
+  height: auto;
+  margin-bottom: 30px;
+}
+
+.loader .loader_bar {
+  position: relative;
+  width: 500px;
+  height: 2px;
+  background: #EDEEF7;
+  border-radius: 50px;
+}
+
+.loader .loader_bar:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #00ade5;
+  border-radius: 50px;
+  animation: fill 2s ease;
+}
+
+@keyframes fill {
+  0% { width: 0% }
+  100% { width: 100% }
+}
+
 .cu-card-details {
   position: relative;
   opacity: 1;
@@ -2890,7 +2943,12 @@ font-family: Montserrat, sans-serif;
   }
   .cu-h-white-div {
     font-family: Montserrat, sans-serif;
-    color: #fff;
+    color: #ffffff;
+    text-align: center;
+  }
+  .cu-h-black-div {
+    font-family: Montserrat, sans-serif;
+    color: #000;
     text-align: center;
   }
   .cu-service-align {
@@ -2909,7 +2967,16 @@ font-family: Montserrat, sans-serif;
     font-size: 24px;
     line-height: 32px;
   }
-  .cu-h-white.work {
+  .cu-h3.work {
+    display: none;
+  }
+  .cu-h-black {
+    display: block;
+    margin-top: 72px;
+    font-size: 24px;
+    line-height: 32px;
+  }
+  .cu-h-black.work {
     margin-top: 24px;
     margin-bottom: 24px;
   }
@@ -3347,6 +3414,9 @@ font-family: Montserrat, sans-serif;
     border-radius: 25px;
   }
   .cu-h-white.work {
+    margin-top: 0px;
+  }
+  .cu-h-black.work {
     margin-top: 0px;
   }
   .cu-p-theme {
