@@ -26,15 +26,6 @@ $(window).on('load', function() {
   });
 });
 
-$(window).on('load', function() {
-  var checkPageLoad = setInterval(function() {
-    if (document.readyState === 'complete') {
-      $('.loader .loader_bar').css('animation', 'none');
-      clearInterval(checkPageLoad);
-    }
-  }, 10);
-});
-
 
 
   
