@@ -1426,7 +1426,6 @@ text-transform: uppercase;
   100% { width: 87% }
 }
 
-
 .cu-card-details {
   position: relative;
   opacity: 1;
@@ -2856,6 +2855,9 @@ font-family: Montserrat, sans-serif;
   }
   .cu-card-arrow-img {
     margin-top: 0;
+  }
+  .loader .loader_bar {
+    width: 60vw;
   }
 }
 
