@@ -1396,7 +1396,7 @@ text-transform: uppercase;
   position: relative;
   width: 500px;
   height: 2px;
-  background: #EDEEF7;
+  background: #d1d2dd;
   border-radius: 50px;
   --loader-width: 0%; /* Add this line */
 }
