@@ -15,10 +15,6 @@ window.addEventListener('scroll', function() {
 });
 
 $(window).on('load', function() {
-  $('.loader .loader_bar:before').css({
-    "width": "100%",
-    "transition-delay": "2s"
-  });
   $('#preloader').css({
     "transform": "translateY(-100%)",
     "transition-delay": "0.6s"
@@ -30,10 +26,16 @@ $(window).on('load', function() {
   });
 });
 
+window.addEventListener('load', function() {
+  var loaderBar = document.getElementById('loader_bar');
+  loaderBar.style.setProperty('--loader-width', '0%'); /* Change this line */
 
+  var interval = setInterval(function() {
+    var loadPercentage = document.readyState === 'complete' ? 100 : 0;
+    loaderBar.style.setProperty('--loader-width', loadPercentage + '%'); /* Change this line */
+    if (loadPercentage === 100) {
+      clearInterval(interval);
+    }
+  }, 100);
+});
 
-
-  
-
-
-  
