@@ -26,16 +26,37 @@ $(window).on('load', function() {
   });
 });
 
-window.addEventListener('load', function() {
-  var loaderBar = document.getElementById('loader_bar');
-  loaderBar.style.setProperty('--loader-width', '0%'); /* Change this line */
+// Get the loader bar element
+var loaderBar = document.getElementById('loader_bar');
 
-  var interval = setInterval(function() {
-    var loadPercentage = document.readyState === 'complete' ? 100 : 0;
-    loaderBar.style.setProperty('--loader-width', loadPercentage + '%'); /* Change this line */
-    if (loadPercentage === 100) {
-      clearInterval(interval);
-    }
-  }, 100);
-});
+// Initialize the loader bar width
+var loaderWidth = 0;
+
+// Function to update the loader bar width
+function updateLoaderWidth() {
+  // Calculate a random increase in width
+  var increase = Math.random() * 5;
+
+  // Calculate the new width
+  loaderWidth += increase;
+
+  // If the new width is greater than 87%, stop the interval
+  if (loaderWidth >= 87) {
+    loaderWidth = 87;
+    clearInterval(interval);
+  }
+
+  // Update the width of the loader bar
+  loaderBar.style.setProperty('--loader-width', loaderWidth + '%');
+}
+
+// Start an interval to increase the loader bar width
+var interval = setInterval(updateLoaderWidth, 200);
+
+// When the window is fully loaded, immediately set the width to 100%
+window.onload = function () {
+  clearInterval(interval);
+  loaderBar.style.setProperty('--loader-width', '100%');
+};
+
 
