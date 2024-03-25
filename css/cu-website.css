@@ -1398,18 +1398,19 @@ text-transform: uppercase;
   height: 2px;
   background: #EDEEF7;
   border-radius: 50px;
+  --loader-width: 0%; /* Add this line */
 }
 
 .loader .loader_bar:before {
   content: '';
+  transition: width 0.3s ease;
   position: absolute;
   top: 0;
   left: 0;
-  width: 87%;
+  width: var(--loader-width); /* Change this line */
   height: 100%;
   background: #00ade5;
   border-radius: 50px;
-  animation: fill 20s ease;
 }
 
 @keyframes fill {
